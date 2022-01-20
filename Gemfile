@@ -20,14 +20,6 @@ gem 'puma', '~> 5.0'
 gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 
-gem 'devise_token_auth'
-gem 'devise'
-gem 'simple_command'
-gem 'cancancan'
-gem 'aasm'
-gem 'json-schema_builder'
-gem 'rswag'
-gem 'kaminari'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -40,7 +32,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
    gem 'rspec-rails', '~> 3.5'
   gem 'rails_db'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master' 
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'database_cleaner-active_record'
+  gem 'database_cleaner-redis' 
 end
 
 group :development do
@@ -51,3 +45,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'devise_token_auth'
+gem 'devise'
+gem 'simple_command'
+gem 'cancancan'
+gem 'aasm'
+gem 'json-schema_builder'
+gem 'rswag'
+gem 'kaminari'
