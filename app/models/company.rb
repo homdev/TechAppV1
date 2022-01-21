@@ -7,4 +7,6 @@ class Company < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
   include DeviseTokenAuth::Concerns::User
+  has_many :projects
+
 end

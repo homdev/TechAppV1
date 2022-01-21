@@ -34,6 +34,7 @@ group :development, :test do
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'database_cleaner-active_record'
   gem 'database_cleaner-redis' 
+  gem "letter_opener"
 end
 
 group :development do
