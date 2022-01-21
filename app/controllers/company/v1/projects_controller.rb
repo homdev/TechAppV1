@@ -20,9 +20,17 @@ class Company::V1::ProjectsController < ApplicationController
   end
 
   def update
+    project = find_project.update!(project_params)
+    if project
+      render json: project
+    else
+      render json: project.errors
+    end
   end
 
   def destroy
+    find_project&.destroy
+    render json: { message: 'Project deleted!' }
   end
 
   private
