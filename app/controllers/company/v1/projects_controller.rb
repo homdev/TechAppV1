@@ -1,5 +1,6 @@
 class Company::V1::ProjectsController < ApplicationController
   before_action :authenticate_company!
+  before_action :find_project, only: %i[show destroy update]
   
   def index
     projects = current_company.projects.all.order(created_at: :desc)
@@ -30,7 +31,7 @@ class Company::V1::ProjectsController < ApplicationController
 
   def destroy
     find_project&.destroy
-    render json: { message: 'Project deleted!' }
+    render json: { message: 'Projects deleted!' }
   end
 
   private

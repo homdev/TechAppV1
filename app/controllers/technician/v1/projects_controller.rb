@@ -10,7 +10,7 @@ class Technician::V1::ProjectsController < ApplicationController
       @project = find_project
       render json: @project
     end
-  
+    
     private
   
     def find_project
