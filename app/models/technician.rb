@@ -8,4 +8,5 @@ class Technician < ActiveRecord::Base
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
          include DeviseTokenAuth::Concerns::User
   enum status: %i[available unavailable]
+
 end

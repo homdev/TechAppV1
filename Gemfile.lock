@@ -301,6 +301,8 @@ DEPENDENCIES
   rails_db
   rspec-rails (~> 3.5)
   rswag
+  rswag-api
+  rswag-ui
   simple_command
   spring
   sprockets (~> 3.0)

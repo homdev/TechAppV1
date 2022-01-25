@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   mount_devise_token_auth_for 'Company', at: 'company_auth'
   mount_devise_token_auth_for 'Technician', at: 'technician_auth'
-
   mount_devise_token_auth_for 'ProjectLeader', at: 'project_leader_auth'
   as :project_leader do
     # Define routes for ProjectLeader within this block.

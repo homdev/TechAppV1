@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_25_093103) do
+ActiveRecord::Schema.define(version: 2022_01_25_110548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,7 +131,19 @@ ActiveRecord::Schema.define(version: 2022_01_25_093103) do
     t.index ["uid", "provider"], name: "index_technicians_on_uid_and_provider", unique: true
   end
 
+  create_table "technicians_checkins_checkouts", force: :cascade do |t|
+    t.datetime "checkin_datetime"
+    t.datetime "checkout_datetime"
+    t.string "checkin_coordinates"
+    t.string "checkout_coordinates"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "technicians_id"
+    t.index ["technicians_id"], name: "index_technicians_checkins_checkouts_on_technicians_id"
+  end
+
   add_foreign_key "project_leaders", "companies"
   add_foreign_key "projects", "companies"
   add_foreign_key "projects", "project_leaders"
+  add_foreign_key "technicians_checkins_checkouts", "technicians", column: "technicians_id"
 end
