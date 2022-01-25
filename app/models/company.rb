@@ -9,5 +9,5 @@ class Company < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   has_many :projects
   has_many :project_leaders
-
+  has_many :customers
 end

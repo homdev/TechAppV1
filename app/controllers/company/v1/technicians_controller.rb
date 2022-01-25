@@ -26,7 +26,7 @@ class Company::V1::TechniciansController < ApplicationController
    end
    
    def technician_params
-      params.permit(:name, :email, :password)
+      params.permit(:name, :email, :status, :password)
    end
 
 end
